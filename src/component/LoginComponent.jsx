@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './LoginComponent.css'
 export default function LoginComponent() {
 
@@ -6,6 +7,8 @@ export default function LoginComponent() {
     const [password, setPassword] = useState('')
     const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const [showErrorMessage, setShowErrorMessage] = useState(false)
+    const navigate = useNavigate();
+
     function handleUsernameChange(event) {
         console.log(event.target.value)
         setUsername(event.target.value)
@@ -19,6 +22,7 @@ export default function LoginComponent() {
         if (username === 'foo' && password === 'dummy') {
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
+            navigate("/welcome")
         } else {
             setShowSuccessMessage(false)
             setShowErrorMessage(true)

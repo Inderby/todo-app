@@ -7,6 +7,7 @@ export default function TodoApp(){
         <div className="TodoApp">
             <BrowserRouter>
                 <Routes>
+                    <Route path="/" element={<LoginComponent/>}></Route>
                     <Route path="/login" element={<LoginComponent/>}></Route>
                     <Route path="/welcome" element={<WelcomeComponent/>}></Route>
                 </Routes>

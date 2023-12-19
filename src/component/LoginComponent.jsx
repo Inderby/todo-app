@@ -22,7 +22,7 @@ export default function LoginComponent() {
         if (username === 'foo' && password === 'dummy') {
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
-            navigate("/welcome")
+            navigate(`/welcome/${username}`)
         } else {
             setShowSuccessMessage(false)
             setShowErrorMessage(true)

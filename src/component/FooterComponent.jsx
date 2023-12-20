@@ -1,9 +1,6 @@
 import "./FooterComponent.css";
-import { useContext } from "react";
-import { AuthContext } from "./security/AuthContext";
-export default function FooterComponent() {
-  const authContext = useContext(AuthContext);
 
+export default function FooterComponent() {
   return (
     <footer className="footer">
       <div className="container">

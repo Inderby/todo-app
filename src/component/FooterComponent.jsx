@@ -1,7 +1,10 @@
+import './FooterComponent.css'
 export default function FooterComponent() {
     return (
-        <div className="footer">
-             <hr /> Footer
-        </div>
+        <footer className="footer">
+            <div className="container">
+                <hr /> Footer
+            </div>
+        </footer>
     )
 }

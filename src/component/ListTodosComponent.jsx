@@ -10,7 +10,7 @@ export default function ListTodosComponent() {
         <div className="ListTodosComponent">
             <h1>Things You Want To Do!</h1>
             <div>
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <td>ID</td>

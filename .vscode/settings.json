@@ -1,0 +1,7 @@
+{
+  "java.compile.nullAnalysis.mode": "automatic",
+  "yaml.extension.recommendations": true,
+  "yaml.validate": true,
+  "editor.defaultFormatter": "mwpb.java-prettier-formatter",
+  "workbench.colorTheme": "GitHub Dark"
+}

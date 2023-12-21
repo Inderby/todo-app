@@ -24,4 +24,9 @@ public class TodoService {
   public Todo findById(Long id) {
     return todoRepository.findById(id).get();
   }
+
+  public Todo updateTodo(Todo todo) {
+    todo.setDescription("modified");
+    return todo;
+  }
 }

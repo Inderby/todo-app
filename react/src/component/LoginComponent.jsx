@@ -9,7 +9,6 @@ export default function LoginComponent() {
   const navigate = useNavigate();
   const authContext = useAuth();
   function handleUsernameChange(event) {
-    console.log(event.target.value);
     setUsername(event.target.value);
   }
 
@@ -19,6 +18,7 @@ export default function LoginComponent() {
 
   function handleSubmit() {
     if (authContext.login(username, password)) {
+      authContext.setUsername(username);
       navigate(`/welcome/${username}`);
     } else {
       setShowErrorMessage(true);

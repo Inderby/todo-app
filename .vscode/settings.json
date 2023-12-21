@@ -2,6 +2,9 @@
   "java.compile.nullAnalysis.mode": "automatic",
   "yaml.extension.recommendations": true,
   "yaml.validate": true,
-  "editor.defaultFormatter": "mwpb.java-prettier-formatter",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[java]": {
+    "editor.defaultFormatter": "mwpb.java-prettier-formatter"
+  },
   "workbench.colorTheme": "GitHub Dark"
 }

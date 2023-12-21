@@ -20,4 +20,8 @@ public class TodoService {
   public List<Todo> findByUsername(String username) {
     return todoRepository.findByUsername(username);
   }
+
+  public Todo findById(Long id) {
+    return todoRepository.findById(id).get();
+  }
 }

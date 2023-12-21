@@ -9,6 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,7 +55,7 @@ public class TodoController {
     return List.of(todo1, todo2, todo3);
   }
 
-  @GetMapping("/users/{username}/todos/{id}")
+  @GetMapping("users/{username}/todo/{id}")
   public Todo retrieveTodo(
     @PathVariable("username") String username,
     @PathVariable("id") Long id
@@ -61,12 +64,29 @@ public class TodoController {
     //return todoService.findById(id);
   }
 
-  @DeleteMapping("/users/{username}/todos/{id}")
+  @DeleteMapping("users/{username}/todo/{id}")
   public ResponseEntity<Void> deleteTodo(
     @PathVariable("username") String username,
     @PathVariable("id") Long id
   ) {
     //TODO: delete to todos in database
     return ResponseEntity.noContent().build();
+  }
+
+  @PutMapping("users/{username}/todo/{id}")
+  public Todo updateTodo(
+    @PathVariable("username") String username,
+    @PathVariable("id") Long id,
+    @RequestBody Todo todo
+  ) {
+    //TODO: process PUT request
+    return todoService.updateTodo(todo);
+  }
+
+  @PostMapping("users/{username}/todo/{id}")
+  public Todo postMethodName(@RequestBody Todo entity) {
+    //TODO: process POST request
+
+    return entity;
   }
 }

@@ -100,7 +100,11 @@ export default function TodoComponent() {
                 <Field type="date" className="form-control" name="targetDate" />
               </fieldset>
               <div>
-                <button className="btn btn-success" type="submit">
+                <button
+                  className="btn btn-success"
+                  type="submit"
+                  onClick={onSubmit}
+                >
                   Save
                 </button>
               </div>

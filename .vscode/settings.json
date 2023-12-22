@@ -6,5 +6,6 @@
   "[java]": {
     "editor.defaultFormatter": "mwpb.java-prettier-formatter"
   },
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

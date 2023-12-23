@@ -8,7 +8,7 @@ import moment from "moment";
 export default function TodoComponent() {
   const { id } = useParams();
   const [description, setDescription] = useState("");
-  const [targetDate, setTagetDate] = useState("");
+  const [targetDate, setTargetDate] = useState("");
   const authContext = useAuth();
   const navigate = useNavigate();
   const username = authContext.username;
@@ -19,10 +19,10 @@ export default function TodoComponent() {
 
   function retrieveTodos() {
     if (id != -1) {
-      retrieveTodoApi("test", 1)
+      retrieveTodoApi(username, id)
         .then((response) => {
           setDescription(response.data.description);
-          setTagetDate(response.data.targetDate);
+          setTargetDate(response.data.targetDate);
         })
         .catch((error) => console.log(error));
     } else {
@@ -30,6 +30,8 @@ export default function TodoComponent() {
   }
 
   function onSubmit(values) {
+    console.log(values);
+
     const todo = {
       id: id,
       username: username,
@@ -37,7 +39,6 @@ export default function TodoComponent() {
       targetDate: values.targetDate,
       done: false,
     };
-
     if (id == -1) {
       createTodoApi(username, todo).then((response) => {
         navigate("/todos");
@@ -53,10 +54,11 @@ export default function TodoComponent() {
     if (values.description.length < 5) {
       errors.description = "Enter at least 5 characters";
     }
+    console.log(values.targetDate);
     if (
       values.targetDate == null ||
       values.targetDate == "" ||
-      moment(values.targetDate).isValid()
+      !moment(values.targetDate).isValid()
     ) {
       errors.targetDate = "Enter target date";
     }
@@ -100,11 +102,7 @@ export default function TodoComponent() {
                 <Field type="date" className="form-control" name="targetDate" />
               </fieldset>
               <div>
-                <button
-                  className="btn btn-success"
-                  type="submit"
-                  onClick={onSubmit}
-                >
+                <button className="btn btn-success" type="submit">
                   Save
                 </button>
               </div>

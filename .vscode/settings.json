@@ -7,5 +7,8 @@
     "editor.defaultFormatter": "mwpb.java-prettier-formatter"
   },
   "workbench.colorTheme": "GitHub Dark",
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  }
 }

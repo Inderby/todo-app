@@ -18,7 +18,7 @@ export default function ListTodosComponent() {
   useEffect(() => refreshTodos(), []);
 
   function refreshTodos() {
-    retrieveAllTodoForUsername("test")
+    retrieveAllTodoForUsername(username)
       .then((response) => {
         setTodos(response.data);
       })

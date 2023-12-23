@@ -26,4 +26,21 @@ public class Todo {
   private String description;
   private LocalDate targetDate;
   private boolean done;
+
+  @Override
+  public String toString() {
+    return (
+      "Todo [id=" +
+      id +
+      ", username=" +
+      username +
+      ", description=" +
+      description +
+      ", targetDate=" +
+      targetDate +
+      ", done=" +
+      done +
+      "]"
+    );
+  }
 }

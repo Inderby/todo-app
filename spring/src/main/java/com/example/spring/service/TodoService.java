@@ -5,17 +5,12 @@ import com.example.spring.repository.TodoRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
 @RequiredArgsConstructor
 public class TodoService {
 
   private final TodoRepository todoRepository;
-
-  public List<Todo> getTodoList(String username) {
-    return null;
-  }
 
   public List<Todo> findByUsername(String username) {
     return todoRepository.findByUsername(username);
@@ -26,7 +21,10 @@ public class TodoService {
   }
 
   public Todo updateTodo(Todo todo) {
-    todo.setDescription("modified");
-    return todo;
+    return todoRepository.save(todo);
+  }
+
+  public void deleteById(Long id) {
+    todoRepository.deleteById(id);
   }
 }

@@ -43,10 +43,11 @@ export default function TodoComponent() {
       createTodoApi(username, todo).then((response) => {
         navigate("/todos");
       });
+    } else {
+      updateTodoApi(username, id, todo).then((response) => {
+        navigate("/todos");
+      });
     }
-    updateTodoApi(username, id, todo).then((response) => {
-      navigate("/todos");
-    });
   }
 
   function validate(values) {

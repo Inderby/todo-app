@@ -53,14 +53,11 @@ public class TodoController {
     @PathVariable("id") Long id,
     @RequestBody Todo todo
   ) {
-    System.out.println("updateTodo: " + todo);
     return todoService.updateTodo(todo);
   }
 
   @PostMapping("users/{username}/todo")
   public Todo createTodo(@RequestBody Todo entity) {
-    System.out.println("entity: " + entity);
-
     return todoService.updateTodo(entity);
   }
 }

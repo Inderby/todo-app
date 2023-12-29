@@ -59,7 +59,6 @@ public class TodoController {
 
   @PostMapping("users/{username}/todo")
   public Todo createTodo(@RequestBody Todo entity) {
-    entity.setId(Long.valueOf(4));
     System.out.println("entity: " + entity);
 
     return todoService.updateTodo(entity);
